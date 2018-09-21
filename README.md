@@ -2,15 +2,12 @@
 
 ## Purpose of this fork
 
-- allow drag & drop images to compare them
+- allow click & drag images to compare them
 - allow drag & drop of a single image to change only one side
 - allow zoom & pan of the comparison to see details
 
-You can see the updated features of this fork on : https://image-compare.netlify.com/
-
+You can see the updated features of this fork on : https://image-compare.netlify.com/ <br>
 And still check the original author website : https://marcincichocki.github.io/vue-image-compare/
-
-Bellow, the original readme :
 
 ## Requirements
 
@@ -26,57 +23,59 @@ npm i vue-image-compare --save
 
 ```javascript
 import Vue from 'vue';
-import VueImageCompare from 'vue-image-compare';
-
-Vue.use(VueImageCompare);
 
 new Vue({
-  data() {
-    return {
-      before: '/img/before.jpg',
-      after: '/img/after.jpg'
+    components: {
+        imageCompare: require('vue-image-compare')
+    },
+    data() {
+        return {
+            before: '/img/before.jpg',
+            after: '/img/after.jpg'
+        }
     }
-  }
 }).$mount('#app');
 ```
 
 ```html
 <div id="app">
-  <image-compare :before="before" :after="after"/>
+    <image-compare :before="before" :after="after"/>
 </div>
 ```
 
-If you are **not** using using es6, instead of importing add 
+### Props
 
-```html
-<script src="/path/to/vue-image-compare.js"></script>
-```
+| Name             | Required             | Type        | Default                                | Description                                                                                                                                             |
+| ---------------- | -------------------- | ----------- | :------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `before`         | :white_check_mark:   | `String`    | `undefined`                            | Path to the image image *before* change                                                                                                                 |
+| `after`          | :white_check_mark:   | `String`    | `undefined`                            | Path to the image image *after* change                                                                                                                  |
+| `full`           | :x:                  | `Boolean`   | `false`                                | Determines if images are stretched to fill parent element. <br> Can be used with help of CSS `object-fit: cover` to create full page image comparison   |
+| `padding`        | :x:                  | `Object`    | <pre>{left: 0, right: 0}</pre>         | Set left and right "padding" in pixels, so handle can **not** reach edge of an image                                                                    |
+| `hideAfter`      | :x:                  | `Boolean`   | `false`                                | Hide the after image                                                                                                                                    |
+| `zoom`           | :x:                  | `Object`    | <pre>{min: 0.5, max: 2}</pre>          | scale image by                                                                                                                                          |
+| `reset`          | :x:                  | `Boolean`   | `false`                                | reset all to original                                                                                                                                   |
+| `isZoomable`     | :x:                  | `Boolean`   | `false`                                | enable using the mouse wheel to zoom in/out                                                                                                             |
+| `isDraggable`    | :x:                  | `Boolean`   | `false`                                | allow moving the comparison left/right with click + drag                                                                                                |
+| `isSwitchable`   | :x:                  | `Boolean`   | `false`                                | allow drag & drop new images to compare                                                                                                                 |
+| `labels`         | :x:                  | `Object`    | <pre>{after: '', before: ''}</pre>     | comparison after & before labels                                                                                                                        |
 
-just before closing body tag. 
-
-## Props
-
-| Name | Type | Description | Required | Default |
-| --- | --- | --- | --- | --- |
-| `before` | `String` | Path to the image image *before* change | Yes | `undefined` |
-| `after` | `String` | Path to the image image *after* change | Yes | `undefined` |
-| `full` | `Boolean` | Determines if images are stretched to fill parent element. Can be used with help of CSS `object-fit: cover` to create full page image comparison | No | `false` |
-| `padding` | `Object` | Set left and right "padding" in pixels, so handle can **not** reach edge of an image | No | `{ left: 0, right: 0 }` |
-| `hideAfter` | `Boolean` | Hide image after and handle | No | `false` |
-
-## Slots
+### Slots
 
 - `icon-left` - element to be placed on the left side of the handle
 - `icon-right` - element to be placed on the right side of the handle
 
-Example: 
+Example:
 
 ```html
-<image-compare before="/img/before.jpg" after="/img/after.jpg" :padding="{ left: 50, right: 50 }">
-  <i class="fa fa-angle-left" aria-hidden="true" slot="icon-left"></i>
-  <i class="fa fa-angle-right" aria-hidden="true" slot="icon-right"></i>
+<image-compare before="/img/before.jpg" after="/img/after.jpg">
+    <i class="fa fa-angle-left" aria-hidden="true" slot="icon-left"></i>
+    <i class="fa fa-angle-right" aria-hidden="true" slot="icon-right"></i>
 </image-compare>
 ```
+
+### Events
+
+- `@movment` - when image/handle is dragged left/right
 
 ## License
 
