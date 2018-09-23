@@ -2,16 +2,22 @@
 
 ## Purpose of this fork
 
-- allow click & drag images to compare them
-- allow drag & drop of a single image to change only one side
-- allow zoom & pan of the comparison to see details
+**simple images loading** via drag & drop files into browser, will load images locally (no upload to any server)
 
-You can see the updated features of this fork on : https://image-compare.netlify.com/ <br>
-And still check the original author website : https://marcincichocki.github.io/vue-image-compare/
+* drop 2 files
+* drop 1 file on one side to change only one side of the comparison
+
+**better image comparison**  to see details :
+
+* allow click & drag
+* allow zoom
+
+You can see the updated features of this fork on : [https://image-compare.netlify.com](https://image-compare.netlify.com)
+And still check the original author website : [https://marcincichocki.github.io/vue-image-compare](https://marcincichocki.github.io/vue-image-compare)
 
 ## Requirements
 
-- [Vue.js](http://vuejs.org/) (^2.0.0)
+* [Vue.js](http://vuejs.org/) (^2.0.0)
 
 ## Installation
 
@@ -45,24 +51,27 @@ new Vue({
 
 ### Props
 
-| Name             | Required             | Type        | Default                                | Description                                                                                                                                             |
-| ---------------- | -------------------- | ----------- | :------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `before`         | :white_check_mark:   | `String`    | `undefined`                            | Path to the image image *before* change                                                                                                                 |
-| `after`          | :white_check_mark:   | `String`    | `undefined`                            | Path to the image image *after* change                                                                                                                  |
-| `full`           | :x:                  | `Boolean`   | `false`                                | Determines if images are stretched to fill parent element. <br> Can be used with help of CSS `object-fit: cover` to create full page image comparison   |
-| `padding`        | :x:                  | `Object`    | <pre>{left: 0, right: 0}</pre>         | Set left and right "padding" in pixels, so handle can **not** reach edge of an image                                                                    |
-| `hideAfter`      | :x:                  | `Boolean`   | `false`                                | Hide the after image                                                                                                                                    |
-| `zoom`           | :x:                  | `Object`    | <pre>{min: 0.5, max: 2}</pre>          | scale image by                                                                                                                                          |
-| `reset`          | :x:                  | `Boolean`   | `false`                                | reset all to original                                                                                                                                   |
-| `isZoomable`     | :x:                  | `Boolean`   | `false`                                | enable using the mouse wheel to zoom in/out                                                                                                             |
-| `isDraggable`    | :x:                  | `Boolean`   | `false`                                | allow moving the comparison left/right with click + drag                                                                                                |
-| `isSwitchable`   | :x:                  | `Boolean`   | `false`                                | allow drag & drop new images to compare                                                                                                                 |
-| `labels`         | :x:                  | `Object`    | <pre>{after: '', before: ''}</pre>     | comparison after & before labels                                                                                                                        |
+| Name           | Type      | Default                   | Description                 |
+| -------------- | --------- | ------------------------- | --------------------------- |
+| `before`       | `String`  | `undefined`               | path to the image *before*  |
+| `after`        | `String`  | `undefined`               | path to the image *after*   |
+| `full`         | `Boolean` | `false`                   | stretch images (1)          |
+| `padding`      | `Object`  | `{left: 0, right: 0}`     | left and right padding (2)  |
+| `hideAfter`    | `Boolean` | `false`                   | hide the after image        |
+| `zoom`         | `Object`  | `{min: 0.5, max: 2}`      | scale image by              |
+| `reset`        | `Boolean` | `false`                   | reset all to original       |
+| `isZoomable`   | `Boolean` | `false`                   | mouse wheel to zoom in/out  |
+| `isDraggable`  | `Boolean` | `false`                   | allow moving the comparison |
+| `isSwitchable` | `Boolean` | `false`                   | allow drag & drop           |
+| `labels`       | `Object`  | `{after: '', before: ''}` | comparison labels           |
+
+(1) : Determines if images are stretched to fill parent element. Can be used with help of CSS object-fit: cover to create full page image comparison
+(2) : Set left and right "padding" in pixels, so handle can not reach edge of an image
 
 ### Slots
 
-- `icon-left` - element to be placed on the left side of the handle
-- `icon-right` - element to be placed on the right side of the handle
+* `icon-left` - element to be placed on the left side of the handle
+* `icon-right` - element to be placed on the right side of the handle
 
 Example:
 
@@ -75,7 +84,7 @@ Example:
 
 ### Events
 
-- `@movment` - when image/handle is dragged left/right
+* `@movment` - when image/handle is dragged left/right
 
 ## License
 
