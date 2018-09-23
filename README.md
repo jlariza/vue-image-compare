@@ -12,7 +12,7 @@
 * allow click & drag
 * allow zoom
 
-You can see the updated features of this fork on : [https://image-compare.netlify.com](https://image-compare.netlify.com)
+You can see the updated features of this fork on : [https://image-compare.netlify.com](https://image-compare.netlify.com)<br>
 And still check the original author website : [https://marcincichocki.github.io/vue-image-compare](https://marcincichocki.github.io/vue-image-compare)
 
 ## Requirements
@@ -66,6 +66,7 @@ new Vue({
 | `labels`       | `Object`  | `{after: '', before: ''}` | comparison labels           |
 
 (1) : Determines if images are stretched to fill parent element. Can be used with help of CSS object-fit: cover to create full page image comparison
+
 (2) : Set left and right "padding" in pixels, so handle can not reach edge of an image
 
 ### Slots
