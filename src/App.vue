@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import ImageCompare from 'vue-image-compare'
+import ImageCompare from 'vue-image-compare2'
 
 export default {
   name: 'app',
