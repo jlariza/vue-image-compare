@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ImageCompare before="assets/before.jpg" after="assets/after.jpg" full isZoomable isSwitchable isDraggable>
+    <ImageCompare before="assets/before.jpg" after="assets/after.jpg" full isZoomable isSwitchable isDraggable showHandleOnDrag>
       <i class="fa fa-angle-left" aria-hidden="true" slot="icon-left"></i>
       <i class="fa fa-angle-right" aria-hidden="true" slot="icon-right"></i>
     </ImageCompare>
