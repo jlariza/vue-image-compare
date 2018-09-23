@@ -12,7 +12,8 @@
 * allow click & drag
 * allow zoom
 
-You can see the updated features of this fork on : [https://image-compare.netlify.com](https://image-compare.netlify.com)<br>
+You can see the updated features of this fork on : [https://image-compare.netlify.com](https://image-compare.netlify.com)
+
 And still check the original author website : [https://marcincichocki.github.io/vue-image-compare](https://marcincichocki.github.io/vue-image-compare)
 
 ## Requirements
