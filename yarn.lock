@@ -6382,9 +6382,9 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
 
-"vue-image-compare@https://github.com/ctf0/vue-image-compare":
-  version "0.6.1"
-  resolved "https://github.com/ctf0/vue-image-compare#9575f403717c54deaf14ba14a284d82c127a7c0f"
+vue-image-compare2@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/vue-image-compare2/-/vue-image-compare2-0.7.0.tgz#5e3eedabefef07e5e5f6098d6c1d15dc22b3aac2"
 
 vue-loader@^15.4.2:
   version "15.4.2"
