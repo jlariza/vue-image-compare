@@ -15,7 +15,7 @@ yarn // or yarn install or npm install
 Then start it :
 
 ```js
-yarn start // or npm start
+yarn serve // or npm run serve
 ```
 
 ## Thanks
