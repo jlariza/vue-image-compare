@@ -1,92 +1,27 @@
 # Vue Image Compare
 
-## Purpose of this fork
+## Demo
 
-**simple images loading** via drag & drop files into browser, will load images locally (no upload to any server)
-
-* drop 2 files
-* drop 1 file on one side to change only one side of the comparison
-
-**better image comparison**  to see details :
-
-* allow click & drag
-* allow zoom
-
-You can see the updated features of this fork on : [https://image-compare.netlify.com](https://image-compare.netlify.com)
-
-And still check the original author website : [https://marcincichocki.github.io/vue-image-compare](https://marcincichocki.github.io/vue-image-compare)
-
-## Requirements
-
-* [Vue.js](http://vuejs.org/) (^2.0.0)
-
-## Installation
-
-```bash
-npm i vue-image-compare --save
-```
+This demo branch shows a simple usage of **Vue Image Compare**.
 
 ## Usage
 
-```javascript
-import Vue from 'vue';
+Just clone this branch and :
 
-new Vue({
-    components: {
-        imageCompare: require('vue-image-compare')
-    },
-    data() {
-        return {
-            before: '/img/before.jpg',
-            after: '/img/after.jpg'
-        }
-    }
-}).$mount('#app');
+```js
+yarn // or yarn install or npm install
 ```
 
-```html
-<div id="app">
-    <image-compare :before="before" :after="after"/>
-</div>
+Then start it :
+
+```js
+yarn start // or npm start
 ```
 
-### Props
+## Thanks
 
-| Name           | Type      | Default                   | Description                 |
-| -------------- | --------- | ------------------------- | --------------------------- |
-| `before`       | `String`  | `undefined`               | path to the image *before*  |
-| `after`        | `String`  | `undefined`               | path to the image *after*   |
-| `full`         | `Boolean` | `false`                   | stretch images (1)          |
-| `padding`      | `Object`  | `{left: 0, right: 0}`     | left and right padding (2)  |
-| `hideAfter`    | `Boolean` | `false`                   | hide the after image        |
-| `zoom`         | `Object`  | `{min: 0.5, max: 2}`      | scale image by              |
-| `reset`        | `Boolean` | `false`                   | reset all to original       |
-| `isZoomable`   | `Boolean` | `false`                   | mouse wheel to zoom in/out  |
-| `isDraggable`  | `Boolean` | `false`                   | allow moving the comparison |
-| `isSwitchable` | `Boolean` | `false`                   | allow drag & drop           |
-| `labels`       | `Object`  | `{after: '', before: ''}` | comparison labels           |
-
-(1) : Determines if images are stretched to fill parent element. Can be used with help of CSS object-fit: cover to create full page image comparison
-
-(2) : Set left and right "padding" in pixels, so handle can not reach edge of an image
-
-### Slots
-
-* `icon-left` - element to be placed on the left side of the handle
-* `icon-right` - element to be placed on the right side of the handle
-
-Example:
-
-```html
-<image-compare before="/img/before.jpg" after="/img/after.jpg">
-    <i class="fa fa-angle-left" aria-hidden="true" slot="icon-left"></i>
-    <i class="fa fa-angle-right" aria-hidden="true" slot="icon-right"></i>
-</image-compare>
-```
-
-### Events
-
-* `@movment` - when image/handle is dragged left/right
+* [ctf0](https://github.com/ctf0) : for his contribution <3
+* [Vue Cli 3](https://cli.vuejs.org) : boilerplate of this demo
 
 ## License
 
