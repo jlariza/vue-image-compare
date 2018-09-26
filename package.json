@@ -8,14 +8,13 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.17",
-    "vue-image-compare2": "^0.7.1"
+    "vue-image-compare2": "latest"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",
