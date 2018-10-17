@@ -120,6 +120,11 @@ export default {
             default: false,
             required: false
         },
+        allowRightClick: {
+            type: Boolean,
+            default: true,
+            required: false
+        },
         labels: {
             type: Object,
             required: false,
@@ -313,6 +318,7 @@ export default {
         // click
         onWheelClick() {
             // will flick images quickly
+            if (!this.allowRightClick) {return}
             let i = 0
             for (i = 0; i < 10; i++) {
                 setTimeout(this.switchImages, i * 100)
@@ -322,6 +328,7 @@ export default {
             setTimeout(() => this.showAfter = true, i * 100)
         },
         onRightClick(event) {
+            if (!this.allowRightClick) {return}
             // console.log('switching images')
             event.preventDefault()
             this.switchImages()
