@@ -423,6 +423,12 @@ export default {
         }
     },
     watch: {
+        before(val){
+            this.mutableBefore = val;
+        },
+        after(val){
+            this.mutableAfter = val;
+        },
         reset() {
             this.shiftX = 0
             this.shiftY = 0
