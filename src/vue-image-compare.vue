@@ -2,6 +2,7 @@
     <figure :class="{ full }"
             class="image-compare"
             @mousemove.prevent="onMouseMove"
+            @touchmove.prevent="onMouseMove"
             @click.prevent="onMouseMove($event, true)">
 
         <!-- d&d overlay -->
@@ -33,6 +34,7 @@
              v-show="!hideAfter"
              :style="{ left: posX + 'px' }"
              class="image-compare-handle"
+             @touchstart.prevent="onMouseDownHandle"
              @mousedown.prevent="onMouseDownHandle">
 
             <template>
@@ -233,7 +235,6 @@ export default {
         },
         onMouseMove(event, isDragging = false) {
             this.$emit('movment')
-
             if (event.type == 'click' && this.isDraggable) return
 
             if (event && this.allowNextFrame && (this.isDragging || isDragging)) {
